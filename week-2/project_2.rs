@@ -15,5 +15,5 @@ fn main() {
 	println!("The Sum is{}", s);
 	// average
 	let a = s / 5.0;
-	println!("The Average is {}",a);
+	println!("The Average is {}", a);
 }
