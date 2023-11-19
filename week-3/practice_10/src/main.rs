@@ -8,9 +8,9 @@ fn main() {
     let product:u32 = 4 * 30;
     println!("The multiple of 4 and 30 = {}", product);
 
-    let quotient = 56.7 / 32.2;
+    let quotient:f64 = 56.7 / 32.2;
     println!("The division of 56.7 and 32.2 = {}",quotient);
 
-    let remainder = 43 % 5 ;
+    let remainder:i64 = 43 % 5 ;
     println!("The remainder of 43 and 5 = {}", remainder);
 }

@@ -2,7 +2,7 @@ fn main() {
    
     let fullname = "Chibudum John Umeh";
     let department = "Computer Science";
-    let uni = "Pan-Atlantic University";
+    let mut uni = "Pan-Atlantic University";
 
     let mut school = "School of Science".to_string();
     // push string

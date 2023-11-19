@@ -4,13 +4,13 @@ fn main() {
     let mut result:i32;
 
     result = num1 + num2;
-    println!("Sum: {} ",result);
+    println!("Sum: {}", result);
 
     result = num1 - num2;
-    println!("Difference: {} ",result);
+    println!("Difference: {}", result);
 
     result = num1*num2 ;
-    println!("Product: {} ",result);
+    println!("Product: {}", result);
 
     result = num1/num2 ;
     println!("Quotient: {} ",result);

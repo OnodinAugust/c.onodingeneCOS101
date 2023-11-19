@@ -10,3 +10,4 @@ fn main() {
     let school:&'static str = "School of Science and Technology";
     println!("Department: {}, \nSchool: {}",department,school);
 }
+ 
