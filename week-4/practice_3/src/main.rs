@@ -1,5 +1,5 @@
 fn main() {
-    let name1 = "Ayomide Adsokan";
+    let name1 = "Ayomide Adesokan";
     println!("My name is {}",name1);
 
     //find and replace

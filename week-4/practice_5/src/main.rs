@@ -1,4 +1,4 @@
-fn main() {
+ew fn main() {
     let fullname = " Pan-Atlantic University ";
     println!();
     println!("Name: {}", fullname);
