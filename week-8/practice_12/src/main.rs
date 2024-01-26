@@ -1,5 +1,5 @@
 fn main() {
-
+    
     // mutable array
     let mut colors = ["red", "green", "yellow", "white"];
 

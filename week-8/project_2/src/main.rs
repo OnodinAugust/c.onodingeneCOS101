@@ -1,39 +1,47 @@
-use std::cmp::Ordering;
+use std::io;
 
-struct Candidate {
-    name: String,
-    years_of_experience: u32,
-}
+fn details(name: &mut Vec<String>, yrs_of_exp: &mut Vec<usize>) {
 
-fn find_max_experience(candidates: &Vec<Candidate>) -> Option<&Candidate> {
-    candidates.iter().max_by(|a, b| a.years_of_experience.cmp(&b.years_of_experience))
+    let mut input1 = String::new();
+    let mut input2 = String::new();
+
+    println!("Name:");
+    io::stdin().read_line(&mut input1).expect("Not a valid input");
+    let dev_name = input1.trim();
+    name.push(dev_name.to_string());
+
+    println!("Years of experience:");
+    io::stdin().read_line(&mut input2).expect("Not a valid input");
+    let experience:usize = input2.trim().parse().expect("Not valid");
+    yrs_of_exp.push(experience);
 }
 
 fn main() {
-    // Create a vector of candidates
-    let mut candidates = Vec::new();
 
-    // Add sample candidates
-    candidates.push(Candidate {
-        name: String::from("John Doe"),
-        years_of_experience: 5,
-    });
-    candidates.push(Candidate {
-        name: String::from("Jane Doe"),
-        years_of_experience: 8,
-    });
-    candidates.push(Candidate {
-        name: String::from("Bob Smith"),
-        years_of_experience: 10,
-    });
+    let mut name: Vec<String> = Vec::new();
+    let mut yrs_of_exp: Vec<usize> = Vec::new();
 
-    // Find the candidate with the highest years of experience
-    if let Some(max_candidate) = find_max_experience(&candidates) {
-        println!(
-            "The candidate with the highest years of experience is {} with {} years.",
-            max_candidate.name, max_candidate.years_of_experience
-        );
-    } else {
-        println!("No candidates found.");
+    let mut input3 =String::new();
+    println!("Number of interview candidates:");
+    io::stdin().read_line(&mut input3).expect("Not a valid input");
+    let no_of_candidates:usize = input3.trim().parse().expect("Not valid");
+
+    for i in 0..no_of_candidates {
+        details(&mut name, &mut yrs_of_exp);
     }
+
+    let most_yrs_of_exp = checker(no_of_candidates, &yrs_of_exp);
+    println!("\nThe most experienced interview candidate is {} with {} years of experience.",name[most_yrs_of_exp], yrs_of_exp[most_yrs_of_exp]);
+}
+
+fn checker(input4:usize, experience: &Vec<usize>)->usize {
+    let mut yrs_of_exp = 0;
+    let mut max_yrs_of_exp = 0;
+    for i in 0..input4 {
+        if experience[i] > yrs_of_exp {
+            yrs_of_exp = experience[i];
+            max_yrs_of_exp = i;
+        }
+    }
+    return max_yrs_of_exp;
 }
